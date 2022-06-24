@@ -139,7 +139,7 @@
 .contact-us__form-label {
     // display: block;
     position: relative;
-
+    display: block;
     &::before {
         content: '';
         position: absolute;
