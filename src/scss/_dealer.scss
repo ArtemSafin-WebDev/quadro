@@ -1,0 +1,353 @@
+.dealer {
+    padding-top: 4rem;
+    padding-bottom: 16rem;
+    background-color: #fff;
+    color: var(--text-color);
+
+    @include breakpoint(mobile) {
+        padding-bottom: 3rem;
+    }
+}
+
+.dealer__heading {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 7rem;
+    line-height: 8.7rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 5rem;
+    max-width: 100rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.dealer__top-row {
+    margin-bottom: 10rem;
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-gap: 6rem;
+    }
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 2rem;
+        margin-bottom: 3.2rem;
+        display: grid;
+        grid-gap: 1.6rem;
+    }
+}
+
+.dealer__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    grid-column: 3 / 7;
+    margin-top: -0.5rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+        grid-column: 2 / -1;
+    }
+}
+
+.dealer__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 1.2rem 1.8rem;
+    padding-bottom: 1.3rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: var(--primary-color);
+    grid-column: 7 / -1;
+    align-self: flex-start;
+    justify-self: flex-start;
+
+    @include breakpoint(mobile) {
+        grid-column: 2 / -1;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        padding: 0.9rem 1.2rem;
+        padding-top: 0.8rem;
+    }
+
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+    .no-touch &:hover,
+    .touch &:active {
+        color: white;
+
+        .dealer__btn-bg {
+            transform: translateX(-50%) scaleX(1) skew(-25deg);
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--primary-color);
+        z-index: -1;
+
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+
+        @include breakpoint(mobile) {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%);
+        }
+    }
+
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 1rem 1rem;
+        border-color: transparent transparent var(--primary-color) transparent;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.dealer__btn-bg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 120%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--primary-color);
+    transform: translateX(-50%) scaleX(0) skew(-25deg);
+    transition: transform 0.2s;
+    transform-origin: right center;
+}
+
+.dealer__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 6rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+.dealer__list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.dealer__card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    color: white;
+    &:link,
+    &:visited {
+        color: white;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.dealer__card-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.dealer__card-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 4rem;
+    z-index: 10;
+    @include breakpoint(mobile) {
+        padding: 1rem 1.7rem;
+    }
+}
+
+.dealer__card-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.7rem;
+    line-height: 3.1rem;
+    padding-right: 10rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+        padding-right: 5rem;
+    }
+}
+
+.dealer__card-overlay {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 20;
+    background: rgba(#0b1c2d, 0.9);
+    padding: 4rem;
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+    @include breakpoint(mobile) {
+        padding: 1.7rem 1.7rem;
+    }
+
+    .dealer__card.active & {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+}
+
+.dealer__card-category {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    padding: 0.3rem 0.7rem;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+    align-self: flex-start;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        padding: .4rem .8rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.dealer__card-list {
+    margin-top: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 6rem;
+    grid-row-gap: 3rem;
+    
+
+    @include breakpoint(mobile) {
+        grid-gap: 2rem;
+        grid-row-gap: 1rem;
+    }
+}
+
+.dealer__card-param-card-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    color: #638bb9;
+    margin-bottom: 0.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+}
+
+.dealer__card-param-card-value {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.1rem;
+        line-height: 1.2;
+    }
+}
+
+.dealer__card-close {
+    position: absolute;
+    z-index: 30;
+    width: 5.5rem;
+    height: 5.5rem;
+    right: 3rem;
+    top: 3rem;
+
+    @include breakpoint(mobile) {
+        width: 2.4rem;
+        height: 2.4rem;
+        right: 1.4rem;
+        top: 1.4rem;
+    }
+    svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: white;
+        transition: transform 0.2s;
+    }
+
+    .dealer__card.active & {
+        svg {
+            transform: rotate(45deg);
+        }
+    }
+}

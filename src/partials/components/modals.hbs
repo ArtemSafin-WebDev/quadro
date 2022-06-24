@@ -1,0 +1,81 @@
+<div class="modal js-modal" id="callback-modal">
+    <div class="modal__inner">
+        <button class="modal__close js-close-modal">
+            <svg width="45" height="45" aria-hidden="true" class="icon-close">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+        <h3 class="modal__heading">
+            Ваши контакты
+        </h3>
+        <form action="/" method="POST" class="modal__form" data-need-validation="">
+            <div class="modal__form-fields">
+                <div class="modal__form-field" id="modal-name">
+                    <label class="modal__form-label">
+                        <input type="text" class="modal__form-input" name="your-name" placeholder="Имя" required=""
+                            data-parsley-errors-container="#modal-name">
+                    </label>
+                </div>
+                <div class="modal__form-field" id="modal-phone">
+                    <label class="modal__form-label">
+                        <input type="tel" class="modal__form-input js-phone-input" name="your-phone"
+                            placeholder="Телефон" required="" data-parsley-errors-container="#modal-phone">
+                    </label>
+                </div>
+
+                <div class="modal__form-field" id="modal-email">
+                    <label class="modal__form-label">
+                        <input type="email" class="modal__form-input" name="your-email" placeholder="Почта" required=""
+                            data-parsley-errors-container="#modal-email">
+                    </label>
+                </div>
+
+                <div class="modal__form-field">
+                    <label class="modal__form-label">
+                        <textarea name="comment" class="modal__form-input" placeholder="Комментарии"></textarea>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <label class="modal__form-checkbox">
+                        <input type="checkbox" class="modal__form-checkbox-input" name="policy" required="" checked="">
+                        <span class="modal__form-checkbox-mark">
+                            <svg width="45" height="45" aria-hidden="true" class="icon-checkmark">
+                                <use xlink:href="#checkmark"></use>
+                            </svg>
+                        </span>
+                        <span class="modal__form-checkbox-text">
+                            Я согласен на обработку <a href="#">персональных данных</a>
+                        </span>
+                    </label>
+                </div>
+                <div class="modal__form-field">
+                    <button class="modal__form-submit" type="submit">
+                        <span class="modal__form-submit-bg"></span>
+                        Отправить
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal js-modal" id="callback-modal-success">
+    <div class="modal__inner">
+        <button class="modal__close js-close-modal">
+            <svg width="45" height="45" aria-hidden="true" class="icon-close">
+                <use xlink:href="#close"></use>
+            </svg>
+        </button>
+        <h3 class="modal__heading">
+            <img src="img/success.svg" alt="" class="modal__heading-icon">
+            Спасибо за заявку
+        </h3>
+        <div class="modal__text">
+            Ваша заяка успешно отправлена, в скором времени мы с вами свяжемся!
+        </div>
+        <button class="modal__form-submit js-close-modal" type="button">
+            <span class="modal__form-submit-bg"></span>
+            Хорошо
+        </button>
+    </div>
+</div>

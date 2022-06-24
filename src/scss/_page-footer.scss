@@ -1,0 +1,288 @@
+.page-footer {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+    background-color: #071120;
+    color: white;
+
+    @include breakpoint(mobile) {
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
+    }
+}
+
+.page-footer__top-row,
+.page-footer__bottom-row {
+    @include breakpointMF(small-tablet) {
+        display: grid;
+        grid-gap: 6rem;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        margin-bottom: 8.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.page-footer__top-row {
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-gap: 2rem;
+        display: grid;
+        grid-template-areas: 'logo logo' 'nav contacts';
+        margin-bottom: 5rem;
+    }
+}
+
+.page-footer__bottom-row {
+    @include breakpoint(mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.page-footer__logo {
+    align-self: flex-start;
+    justify-self: flex-start;
+    grid-column: span 2;
+
+    @include breakpoint(mobile) {
+        grid-area: logo;
+    }
+}
+
+.page-footer__logo-image {
+    display: block;
+    height: auto;
+    width: 13rem;
+
+    @include breakpoint(mobile) {
+        width: 12rem;
+    }
+}
+
+.page-footer__nav {
+    grid-column: span 2;
+
+    @include breakpoint(mobile) {
+        grid-area: nav;
+    }
+
+    & > ul {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 1.4rem;
+        & > li {
+            & > a {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+                letter-spacing: 0.01em;
+                position: relative;
+
+                @include breakpoint(mobile) {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.1rem;
+                    line-height: 1.2rem;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    height: 1px;
+                    width: 100%;
+                    transform-origin: left center;
+                    background-color: #fff;
+                    transition: transform 0.2s;
+                    margin-top: 0;
+                    transform: scaleX(0);
+                }
+
+                .no-touch &:hover {
+                    &::before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-footer__contacts {
+    grid-column: span 4;
+
+    @include breakpoint(mobile) {
+        grid-area: contacts;
+    }
+}
+
+.page-footer__contacts-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 6rem;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-gap: 2rem;
+    }
+}
+
+.page-footer__contacts-list-item {
+    grid-column: span 2;
+
+    @include breakpoint(mobile) {
+        grid-column: 1 / -1;
+    }
+}
+
+.page-footer__contacts-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-footer__contacts-card-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.01em;
+    color: #adb6bf;
+    margin-bottom: 0.4rem;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+.page-footer__contacts-card-link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.3rem;
+        line-height: 1.7rem;
+    }
+
+    &[href] {
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 100%;
+            height: 1px;
+            width: 100%;
+            transform-origin: left center;
+            background-color: #fff;
+            transition: transform 0.2s;
+            margin-top: 0;
+            transform: scaleX(0);
+        }
+    }
+
+    .no-touch &:hover {
+        &::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.page-footer__copyright {
+    align-self: flex-end;
+    justify-self: flex-start;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.01em;
+    grid-column: span 2;
+    color: #adb6bf;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+        align-self: flex-start;
+    }
+}
+
+.page-footer__policy {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.01em;
+    color: #adb6bf;
+    align-self: flex-end;
+    justify-self: flex-start;
+    grid-column: span 2;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+        margin-top: 0.6rem;
+        align-self: flex-start;
+    }
+    &:link,
+    &:visited {
+        color: #adb6bf;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: white;
+    }
+}
+
+.page-footer__made-by {
+    align-self: flex-end;
+    justify-self: flex-start;
+    grid-column: span 2;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    letter-spacing: 0.01em;
+    color: #adb6bf;
+    gap: 1rem;
+    display: inline-flex;
+    align-items: flex-end;
+
+    @include breakpoint(mobile) {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: 1.2rem;
+        margin-top: 3.2rem;
+        align-self: flex-start;
+    }
+    &:link,
+    &:visited {
+        color: #adb6bf;
+    }
+}
+
+.page-footer__made-by-image {
+    width: 14rem;
+    margin-bottom: 0.4rem;
+
+    @include breakpoint(mobile) {
+        width: 11.6rem;
+        margin-bottom: 0.2rem;
+    }
+}

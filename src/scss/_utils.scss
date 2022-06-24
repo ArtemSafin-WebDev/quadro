@@ -1,0 +1,28 @@
+.visually-hidden {
+    @include visuallyHidden();
+}
+
+.no-scroll {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    body {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+.hide-on-mobile {
+    @include breakpoint(mobile) {
+        display: none !important;
+    }
+}
+
+.show-on-mobile {
+    @include breakpointMF(small-tablet) {
+        display: none !important;
+    }
+}
