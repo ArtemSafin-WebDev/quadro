@@ -1,0 +1,105 @@
+<style>
+    .loader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #071120;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .animatable .loader {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease .8s, visibility 0s linear 1.2s;
+    }
+
+    .loader__inner {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+
+    }
+
+    .loader__letter-wrapper:nth-child(1) {
+        margin-right: 7px;
+    }
+
+    .loader__letter-wrapper {
+        overflow: hidden;
+    }
+
+    .loader__letter-wrapper svg {
+        transform: translateX(-105%);
+
+        animation-name: slide-in;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-delay: .3s;
+    }
+
+    @media screen and (min-width: 641px) {
+        .loader__inner {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes slide-in {
+        from {
+            transform: translateX(-100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<div class="loader">
+    <div class="loader__inner">
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.45 36.08" width="33.45" height="36.08">
+                <path fill="#f8f8f8"
+                    d="M20,26v5.53l13.45,4.55A19.69,19.69,0,0,0,32,32.63,20.53,20.53,0,0,1,29.41,22.5c.09-7,0-14.12,0-21.12V0H10.6V5.38H24V26Z" />
+                <path fill="#f8f8f8"
+                    d="M5.21,26.07V8.53c0-1.41,0-2.81,0-4.24S5.3,1.41,5.14,0H0V31.41H15.41V26.07H5.21Z" />
+            </svg>
+        </div>
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.82 19.36" width="14.82" height="19.36">
+                <path fill="#f8f8f8"
+                    d="M11.47,0h3.35V11.58a13.24,13.24,0,0,1-.48,3.31,5.66,5.66,0,0,1-3.73,3.91,9.3,9.3,0,0,1-6.37,0C1.69,17.9.48,15.91.13,13.33A18.89,18.89,0,0,1,0,10.84V.08H3.3c0,.41.07.81.07,1.21V12.4a4.07,4.07,0,0,0,6.25,3.25A3.4,3.4,0,0,0,11.32,13a14.56,14.56,0,0,0,.12-1.87V1.54Z" />
+            </svg>
+        </div>
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.82 18.87" width="17.82" height="18.87">
+                <path fill="#f8f8f8"
+                    d="M17.82,18.87H14.23L12.1,13.64H5.69L3.61,18.85H0C2.53,12.51,5,6.28,7.54,0h2.69ZM9,5.52H8.79L7,10.3h3.79Z" />
+            </svg>
+        </div>
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.36 19.02" width="15.36" height="19.02">
+                <path fill="#f8f8f8"
+                    d="M0,19V0H.84c2,0,3.91,0,5.86.14A8.82,8.82,0,0,1,15.33,10c-.2,3.12-1.29,5.76-4.06,7.44a10,10,0,0,1-2.74,1.16C5.76,19.28,2.92,18.92,0,19Zm3.44-3.19a31.56,31.56,0,0,0,3.62-.19,5.13,5.13,0,0,0,4.74-4.56,11.78,11.78,0,0,0-.11-3.7A4.56,4.56,0,0,0,8.76,3.9a12.66,12.66,0,0,0-5.32-.66Z" />
+            </svg>
+        </div>
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.83 18.99" width="13.83" height="18.99">
+                <path fill="#f8f8f8"
+                    d="M8.63,11.3,13.83,19H10.22q-2.66-3.6-5.29-7.21H3.28V19H0V0C3,.11,5.9-.29,8.74.5c3.49,1,4.57,3.82,3.86,6.9a4.85,4.85,0,0,1-2.79,3.33C9.45,10.92,9.08,11.09,8.63,11.3ZM3.28,8.45c1,0,2,.06,2.93,0A5.84,5.84,0,0,0,8,8,2.2,2.2,0,0,0,9.28,5.62a2,2,0,0,0-1.55-2,12.12,12.12,0,0,0-4.45-.28Z" />
+            </svg>
+        </div>
+        <div class="loader__letter-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.54 19.68" width="17.54" height="19.68">
+                <path fill="#f8f8f8"
+                    d="M17.53,9.87a11.06,11.06,0,0,1-.76,4.33,8.33,8.33,0,0,1-8,5.48A8.16,8.16,0,0,1,.77,14a11.64,11.64,0,0,1,.62-9.67,8.56,8.56,0,0,1,15.13.49A11.12,11.12,0,0,1,17.53,9.87ZM3.46,9.72a7.68,7.68,0,0,0,.86,4.1A4.82,4.82,0,0,0,9,16.43a4.6,4.6,0,0,0,4.36-2.77,8.88,8.88,0,0,0,0-7.73A4.64,4.64,0,0,0,8.89,3.21,4.79,4.79,0,0,0,4.32,5.88,7.44,7.44,0,0,0,3.46,9.72Z" />
+            </svg>
+        </div>
+    </div>
+</div>
