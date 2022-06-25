@@ -294,8 +294,7 @@ textarea.modal__form-input {
         padding: 1.6rem 3.2rem;
     }
 
-    .no-touch &:hover,
-    .touch &:active {
+    .no-touch &:hover {
         color: var(--primary-color);
 
         .contact-us__form-field-submit-bg {
@@ -355,8 +354,7 @@ textarea.modal__form-input {
         padding: 1.6rem 3.2rem;
     }
 
-    .no-touch &:hover,
-    .touch &:active {
+    .no-touch &:hover {
         color: white;
 
         .modal__form-submit-bg {

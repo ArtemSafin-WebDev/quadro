@@ -374,8 +374,7 @@
         padding: 1.6rem 3.2rem;
     }
 
-    .no-touch &:hover,
-    .touch &:active {
+    .no-touch &:hover {
         color: var(--primary-color);
 
         .page-header__menu-callback-btn-bg {

@@ -99,8 +99,7 @@
     &:visited {
         color: var(--primary-color);
     }
-    .no-touch &:hover,
-    .touch &:active {
+    .no-touch &:hover {
         color: white;
 
         .dealer__btn-bg {
