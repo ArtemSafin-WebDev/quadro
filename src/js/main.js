@@ -17,6 +17,8 @@ import certificatesSlider from './certificatesSlider';
 import fancybox from './fancybox';
 import fileUpload from './fileUpload';
 import partners from './partners';
+import fixedFooter from './fixedFooter';
+import circlesAnimation from './circlesAnimation';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,9 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
     projectsSlider();
     fancybox();
     fileUpload();
+    fixedFooter();
+    circlesAnimation();
     
-   
-
+    
     const pageContent = document.querySelector('.page-content');
     if (pageContent) {
         const imgLoaded = imagesLoaded(document.querySelector('.page-content'));

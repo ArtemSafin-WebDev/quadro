@@ -57,6 +57,18 @@
     line-height: 9.4rem;
     letter-spacing: -0.02em;
     margin-top: -1rem;
+    
+
+    transform: translateY(3rem);
+    opacity: 0;
+    visibility: hidden;
+
+    .animatable & {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .6s, visibility .6s, transform .6s;
+        transform: translateY(0);
+    }
 
     @include breakpoint(mobile) {
         font-style: normal;
@@ -76,6 +88,18 @@
     font-size: 1.8rem;
     line-height: 2.4rem;
 
+
+    transform: translateY(3rem);
+    opacity: 0;
+    visibility: hidden;
+
+    .animatable & {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .6s, visibility .6s, transform .6s;
+        transform: translateY(0);
+    }
+
     @include breakpoint(mobile) {
         width: 100%;
         flex-shrink: 1;
@@ -90,6 +114,17 @@
 .intro__numbers {
     position: relative;
     margin-top: auto;
+
+    
+    opacity: 0;
+    visibility: hidden;
+
+    .animatable & {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .6s ease .3s, visibility .6s ease .3s, transform .6s ease .3s;
+        transform: translateY(0);
+    }
 
     @include breakpoint(mobile) {
         margin: 0 calc(-1 * var(--content-padding));

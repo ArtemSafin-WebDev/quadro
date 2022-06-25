@@ -1,8 +1,15 @@
 .page-footer {
-    padding-top: 6rem;
-    padding-bottom: 3.5rem;
+   
     background-color: #071120;
     color: white;
+
+
+  
+}
+
+.page-footer__inner {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
 
     @include breakpoint(mobile) {
         padding-top: 3rem;
