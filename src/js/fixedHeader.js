@@ -8,6 +8,8 @@ export default function fixedHeader() {
             document.body.classList.remove('fixed-header');
         }
     };
+
+    checkHeader();
     window.addEventListener('scroll', () => {
         checkHeader();
     });
