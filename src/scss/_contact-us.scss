@@ -481,6 +481,11 @@ textarea.contact-us__form-input {
         width: 1.8rem;
         height: 1.8rem;
     }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: white;
+    }
 }
 
 .contact-us__form-file-wrapper {
