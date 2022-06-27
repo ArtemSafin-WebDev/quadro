@@ -1,0 +1,39 @@
+{{#extend "layout"}}
+{{#content "main"}}
+
+
+<section class="not-found">
+    <div class="not-found__bg">
+        <video class="lazyload" muted="" data-autoplay="" loop="" playsinline="" preload="none">
+            <source src="assets/video/video.mp4" type="video/mp4" />
+        </video>
+    </div>
+    <div class="container">
+        <div class="not-found__content">
+            <div class="not-found__content-inner">
+                <div class="not-found__error">
+                    Ошибка
+                </div>
+                <div class="not-found__info">
+                    <div class="not-found__code">
+                        404
+                    </div>
+                    <h1 class="not-found__title">
+                        Страница не найдена
+                    </h1>
+                    <div class="not-found__text">
+                        Данная страница удалена или никогда не существовала
+                    </div>
+                    <a href="#" class="not-found__home-btn">
+                        <span class="not-found__home-btn-bg"></span>
+                        на главную
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{{/content}}
+{{/extend}}

@@ -2,6 +2,7 @@
     <div class="container">
 
         <div class="page-header__row">
+            {{#unless noFooter }}
             <div class="page-header__menu">
                 <div class="page-header__menu-inner">
 
@@ -28,15 +29,17 @@
                     <a href="tel:8 843 239 26 95" class="page-header__menu-phone">8 843 239 26 95</a>
                     <a href="#callback-modal" class="page-header__menu-callback-btn">
                         <span class="page-header__menu-callback-btn-bg">
-                            
+
                         </span>
                         Оставить заявку
                     </a>
                 </div>
             </div>
+            {{/unless}}
             <a href="/" class="page-header__logo">
                 <img src="img/logo.svg" alt="" class="page-header__logo-image">
             </a>
+            {{#unless noFooter }}
             <nav class="page-header__nav">
                 <ul>
                     <li>
@@ -56,6 +59,7 @@
                     </li>
                 </ul>
             </nav>
+            {{/unless}}
             <div class="page-header__buttons">
                 <a href="tel:8 843 239 26 95" class="page-header__phone">
                     <span class="page-header__phone-icon">
@@ -76,11 +80,13 @@
 
                 </a>
             </div>
+            {{#unless noFooter }}
             <button class="page-header__burger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            {{/unless}}
 
         </div>
     </div>

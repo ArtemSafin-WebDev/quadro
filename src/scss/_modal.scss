@@ -320,7 +320,7 @@ textarea.modal__form-input {
         border: 1px solid white;
         z-index: -1;
 
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 2px), 0 calc(100% + 2px));
     }
 
     &::after {
@@ -385,8 +385,8 @@ textarea.modal__form-input {
             100% 0,
             100% calc(100% - 2rem),
             calc(100% - 2rem) calc(100% - 2rem),
-            calc(100% - 2rem) calc(100% + 1px),
-            0 calc(100% + 1px)
+            calc(100% - 2rem) calc(100% + 2px),
+            0 calc(100% + 2px)
         );
     }
 
