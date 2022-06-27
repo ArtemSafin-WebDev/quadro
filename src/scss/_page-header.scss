@@ -1,11 +1,16 @@
 .page-header {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 50;
     color: white;
     border-bottom: 1px solid #3a4557;
+    transition: background-color .2s;
+
+    .fixed-header & {
+        background-color: #071120;
+    }
 
     .modal-open & {
         padding-right: var(--sb-width, 0);
@@ -172,7 +177,8 @@
             border: 1px solid white;
             z-index: -1;
 
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+            // clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 1px), 0 calc(100% + 1px));
         }
 
         &::after {
@@ -251,11 +257,11 @@
     }
     & > span {
         width: 3.2rem;
-        height: 0.2rem;
+        height: 2px;
         background-color: #fff;
         transition: transform 0.2s, background-color 0.2s, opacity 0.2s;
         border-radius: 0.4rem;
-        margin-bottom: 0.9rem;
+        margin-bottom: 9px;
         &:last-child {
             margin-bottom: 0;
         }
@@ -264,7 +270,7 @@
     .mobile-menu-open & {
         & > span {
             &:nth-child(1) {
-                transform: translateY(1.1rem) rotate(45deg);
+                transform: translateY(11px) rotate(45deg);
                 
             }
             &:nth-child(2) {
@@ -272,7 +278,7 @@
 
             }
             &:nth-child(3) {
-                transform: translateY(-1.1rem) rotate(-45deg);
+                transform: translateY(-11px) rotate(-45deg);
             }
         }
     }

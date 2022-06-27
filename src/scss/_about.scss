@@ -277,7 +277,7 @@
         height: 26.5rem;
         width: auto;
         max-width: none;
-
+        filter: grayscale(100%);
         @include breakpoint(mobile) {
             height: 13rem;
         }

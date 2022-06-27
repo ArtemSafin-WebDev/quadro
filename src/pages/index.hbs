@@ -322,37 +322,47 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/1.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/1.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/2.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/2.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/3.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/3.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/4.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/4.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/5.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/5.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/6.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/6.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="categories__partners-card">
-                            <img src="img/partners/7.webp" alt="" class="categories__partners-card-image">
+                            <img src="img/partners/7.png" alt="" class="categories__partners-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="categories__partners-card">
+                            <img src="img/partners/8.png" alt="" class="categories__partners-card-image">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="categories__partners-card">
+                            <img src="img/partners/9.png" alt="" class="categories__partners-card-image">
                         </div>
                     </div>
                 </div>
@@ -895,54 +905,74 @@
             </div>
             <form action="/" method="POST" class="contact-us__form" data-need-validation="">
                 <div class="contact-us__form-fields">
-                    <div class="contact-us__form-field" id="name">
+                    <div class="contact-us__form-field" id="your-name">
                         <label class="contact-us__form-label">
-                            <input type="text" class="contact-us__form-input" name="name" placeholder="Имя" required=""
-                                data-parsley-errors-container="#name">
+                            <input type="text" class="contact-us__form-input" name="your-name" placeholder="Имя"
+                                required="" data-parsley-errors-container="#your-name"
+                                data-parsley-class-handler="#your-name">
                         </label>
                     </div>
-                    <div class="contact-us__form-field" id="email">
+                    <div class="contact-us__form-field" id="your-email">
                         <label class="contact-us__form-label">
-                            <input type="email" class="contact-us__form-input" name="email" placeholder="Почта"
-                                required="" data-parsley-errors-container="#email">
+                            <input type="email" class="contact-us__form-input" name="your-email" placeholder="Почта"
+                                required="" data-parsley-errors-container="#your-email"
+                                data-parsley-class-handler="#your-email">
                         </label>
                     </div>
-                    <div class="contact-us__form-field" id="phone">
+                    <div class="contact-us__form-field" id="your-phone">
                         <label class="contact-us__form-label">
-                            <input type="tel" class="contact-us__form-input js-phone-input" name="phone"
-                                placeholder="Телефон" required="" data-parsley-errors-container="#phone">
+                            <input type="tel" class="contact-us__form-input js-phone-input" name="your-phone"
+                                placeholder="Телефон" data-parsley-errors-container="#your-phone"
+                                data-parsley-class-handler="#your-phone" required="" data-parsley-phone="">
                         </label>
                     </div>
                     <div class="contact-us__form-field contact-us__form-field--file contact-us__form-field--high">
-                        <div class="contact-us__form-file">
+                        <div class="contact-us__form-file" id="your-file">
                             <div class="contact-us__form-file-text">
                                 <p>
                                     Вы можете прикрепить лист закупки или прочий документ, и мы сможем расчитать
                                     предварительную стоимость
                                 </p>
                             </div>
-                            <label class="contact-us__form-file-upload js-file-upload">
+                            <div class="contact-us__form-file-wrapper">
 
-                                <input type="file" class="contact-us__form-file-upload-input">
 
-                                <svg width="45" height="45" aria-hidden="true" class="icon-pin">
-                                    <use xlink:href="#pin"></use>
-                                </svg>
-                                <span class="contact-us__form-file-upload-content">
-                                    <span class="contact-us__form-file-upload-text js-file-upload-text">
-                                        Прикрепить документ
+                                <label class="contact-us__form-file-upload js-file-upload">
+
+                                    <input type="file" class="contact-us__form-file-upload-input"
+                                        data-parsley-max-file-size="5000" data-parsley-errors-container="#your-file"
+                                        data-parsley-class-handler="#your-file" name="your-file">
+
+                                    <svg width="45" height="45" aria-hidden="true" class="icon-pin">
+                                        <use xlink:href="#pin"></use>
+                                    </svg>
+                                    <svg width="45" height="45" aria-hidden="true" class="icon-doc">
+                                        <use xlink:href="#doc"></use>
+                                    </svg>
+                                    <span class="contact-us__form-file-upload-content">
+                                        <span class="contact-us__form-file-upload-text js-file-upload-text">
+                                            Прикрепить документ
+                                        </span>
+                                        <span class="contact-us__form-file-upload-size js-file-upload-size">
+                                            Не более 5 Мб
+                                        </span>
                                     </span>
-                                    <span class="contact-us__form-file-upload-size">
-                                        Не более 5 Мб
-                                    </span>
+
+                                </label>
+                                <span class="contact-us__form-file-upload-clear js-file-upload-clear">
+                                    <svg width="45" height="45" aria-hidden="true" class="icon-trash">
+                                        <use xlink:href="#trash"></use>
+                                    </svg>
+                                    Удалить
                                 </span>
-                            </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-us__form-field">
+                    <div class="contact-us__form-field" id="your-comment">
                         <label class="contact-us__form-label">
-                            <textarea name="comment" class="contact-us__form-input"
-                                placeholder="Комментарии"></textarea>
+                            <textarea name="your-comment" class="contact-us__form-input" placeholder="Комментарии"
+                                required="" data-parsley-errors-container="#your-comment"
+                                data-parsley-class-handler="#your-comment"></textarea>
                         </label>
                     </div>
                     <div class="contact-us__form-field contact-us__form-field--centered">

@@ -13,26 +13,26 @@
                 <div class="modal__form-field" id="modal-name">
                     <label class="modal__form-label">
                         <input type="text" class="modal__form-input" name="your-name" placeholder="Имя" required=""
-                            data-parsley-errors-container="#modal-name">
+                            data-parsley-errors-container="#modal-name" data-parsley-class-handler="#modal-name">
                     </label>
                 </div>
                 <div class="modal__form-field" id="modal-phone">
                     <label class="modal__form-label">
                         <input type="tel" class="modal__form-input js-phone-input" name="your-phone"
-                            placeholder="Телефон" required="" data-parsley-errors-container="#modal-phone">
+                            placeholder="Телефон" required="" data-parsley-phone="" data-parsley-errors-container="#modal-phone" data-parsley-class-handler="#modal-phone">
                     </label>
                 </div>
 
                 <div class="modal__form-field" id="modal-email">
                     <label class="modal__form-label">
                         <input type="email" class="modal__form-input" name="your-email" placeholder="Почта" required=""
-                            data-parsley-errors-container="#modal-email">
+                            data-parsley-errors-container="#modal-email" data-parsley-class-handler="#modal-email">
                     </label>
                 </div>
 
-                <div class="modal__form-field">
+                <div class="modal__form-field" id="modal-comment">
                     <label class="modal__form-label">
-                        <textarea name="comment" class="modal__form-input" placeholder="Комментарии"></textarea>
+                        <textarea name="comment" class="modal__form-input" placeholder="Комментарии" required="" data-parsley-errors-container="#modal-comment" data-parsley-class-handler="#modal-comment"></textarea>
                     </label>
                 </div>
                 <div class="modal__form-field">

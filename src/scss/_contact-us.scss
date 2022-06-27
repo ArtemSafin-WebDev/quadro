@@ -112,16 +112,14 @@
     position: relative;
 
     .parsley-errors-list.filled {
-      
         font-size: 1.2rem;
         line-height: 1.2;
         margin-top: 0.5rem;
+        color: rgb(243, 45, 38);
     }
 }
 
 .contact-us__form-field--high {
-  
-
     @include breakpointMF(small-tablet) {
         grid-row: span 2;
     }
@@ -148,6 +146,13 @@
         bottom: 0;
         height: 1px;
         background-color: #4a647e;
+        transition: background-color 0.2s;
+    }
+
+    .parsley-error & {
+        &::before {
+            background-color: rgb(243, 45, 38);
+        }
     }
 
     &::after {
@@ -230,7 +235,7 @@ textarea.contact-us__form-input {
     align-items: center;
     position: relative;
 
-    svg {
+    .icon-pin {
         width: 3.7rem;
         height: 3.7rem;
         fill: white;
@@ -241,6 +246,25 @@ textarea.contact-us__form-input {
             width: 2.9rem;
             height: 2.9rem;
             margin-right: 1rem;
+        }
+    }
+
+    .icon-doc {
+        display: none;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.5rem;
+        fill: white;
+        flex-shrink: 0;
+    }
+
+    .file-loaded & {
+        .icon-pin {
+            display: none;
+        }
+
+        .icon-doc {
+            display: block;
         }
     }
 }
@@ -280,10 +304,6 @@ textarea.contact-us__form-input {
     font-size: 1.2rem;
     line-height: 1.6rem;
     color: #adb6bf;
-
-    .file-loaded & {
-        display: none;
-    }
 }
 
 .contact-us__form-checkbox {
@@ -396,7 +416,14 @@ textarea.contact-us__form-input {
         border: 1px solid white;
         z-index: -1;
 
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% + 1px),
+            0 calc(100% + 1px)
+        );
     }
 
     &::after {
@@ -425,9 +452,40 @@ textarea.contact-us__form-input {
     transform-origin: right center;
 }
 
-
 .contact-us__form-field--file {
     @include breakpoint(mobile) {
         order: 10;
     }
+}
+
+.contact-us__form-file-upload-clear {
+    display: inline-flex;
+    align-items: center;
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: #adb6bf;
+    gap: 0.6rem;
+    display: none;
+    cursor: pointer;
+    .file-loaded & {
+        display: inline-flex;
+    }
+    svg {
+        flex-shrink: 0;
+        fill: currentColor;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+.contact-us__form-file-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
 }

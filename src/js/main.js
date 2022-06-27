@@ -19,6 +19,7 @@ import fileUpload from './fileUpload';
 import partners from './partners';
 import fixedFooter from './fixedFooter';
 import circlesAnimation from './circlesAnimation';
+import fixedHeader from './fixedHeader';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fileUpload();
     fixedFooter();
     circlesAnimation();
+    fixedHeader();
     
     
     const pageContent = document.querySelector('.page-content');

@@ -117,10 +117,10 @@
         border: 1px solid var(--primary-color);
         z-index: -1;
 
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 1px), 0 calc(100% + 1px));
 
         @include breakpoint(mobile) {
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) calc(100% - 1.5rem), calc(100% - 1.5rem) calc(100% + 1px), 0 calc(100% + 1px));
         }
     }
 
@@ -212,7 +212,7 @@
     display: flex;
     flex-direction: column;
     padding: 2.5rem 4rem;
-    z-index: 10;
+   
     @include breakpoint(mobile) {
         padding: 1rem 1.7rem;
     }
@@ -225,6 +225,11 @@
     line-height: 3.1rem;
     padding-right: 10rem;
 
+    @include breakpointMF(small-tablet) {
+        position: relative;
+        z-index: 30;
+    }
+   
     @include breakpoint(mobile) {
         font-style: normal;
         font-weight: 700;
@@ -249,6 +254,7 @@
 
     @include breakpoint(mobile) {
         padding: 1.7rem 1.7rem;
+        background: rgba(#0b1c2d, 0.95);
     }
 
     .dealer__card.active & {
@@ -262,7 +268,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     font-style: normal;
     font-weight: 500;
     font-size: 1.5rem;
@@ -273,6 +279,7 @@
     border-radius: 0.5rem;
     margin-bottom: 3rem;
     align-self: flex-start;
+    margin-right: 4rem;
 
     @include breakpoint(mobile) {
         font-size: 1.2rem;

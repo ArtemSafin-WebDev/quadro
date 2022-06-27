@@ -6,7 +6,7 @@ dayjs.extend(customParseFormat);
 
 window.Parsley.addValidator('requiredIfChecked', {
     requirementType: 'string',
-    validateString: function (value, requirement) {
+    validateString: function(value, requirement) {
         const checkbox = document.querySelector(requirement);
 
         if (!checkbox) {
@@ -21,33 +21,52 @@ window.Parsley.addValidator('requiredIfChecked', {
     },
     messages: {
         en: 'Required field',
-        ru: 'Обязательное поле',
+        ru: 'Обязательное поле'
     },
-    priority: 33,
+    priority: 33
 });
 
 window.Parsley.addValidator('phone', {
     requirementType: 'string',
-    validateString: function (value) {
+    validateString: function(value) {
         if (value.trim() === '') return true;
         return /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/.test(value);
     },
     messages: {
         en: 'This value should be a mobile number',
-        ru: 'Введите правильный номер мобильного телефона',
+        ru: 'Введите правильный номер мобильного телефона'
+    }
+});
+
+window.Parsley.addValidator('maxFileSize', {
+    validateString: function(_value, maxSize, parsleyInstance) {
+        if (!window.FormData) {
+            alert('You are making all developpers in the world cringe. Upgrade your browser!');
+            return true;
+        }
+        var files = parsleyInstance.$element[0].files;
+
+        console.log('Current file size', files.length != 1 || files[0].size);
+        console.log('MAx file size', maxSize * 1024)
+        return files.length != 1 || files[0].size <= maxSize * 1024;
     },
+    requirementType: 'integer',
+    messages: {
+        en: 'This file should not be larger than %s Kb',
+        ru: 'Файл не должен быть больше %s Кб.'
+    }
 });
 
 window.Parsley.addValidator('date', {
     requirementType: 'string',
-    validateString: function (value) {
+    validateString: function(value) {
         if (value.trim() === '') return true;
         return dayjs(value, 'DD.MM.YYYY', true).isValid();
     },
     messages: {
         en: 'Enter correct date',
-        ru: 'Введите правильно дату',
-    },
+        ru: 'Введите правильно дату'
+    }
 });
 
 Parsley.addMessages('ru', {
@@ -58,7 +77,7 @@ Parsley.addMessages('ru', {
         number: 'Введите число.',
         integer: 'Введите целое число.',
         digits: 'Введите только цифры.',
-        alphanum: 'Введите буквенно-цифровое значение.',
+        alphanum: 'Введите буквенно-цифровое значение.'
     },
     notblank: 'Это поле должно быть заполнено.',
     required: 'Обязательное поле',
@@ -72,7 +91,7 @@ Parsley.addMessages('ru', {
     mincheck: 'Выберите не менее %s значений.',
     maxcheck: 'Выберите не более %s значений.',
     check: 'Выберите от %s до %s значений.',
-    equalto: 'Это значение должно совпадать.',
+    equalto: 'Это значение должно совпадать.'
 });
 
 Parsley.setLocale('ru');
@@ -80,7 +99,7 @@ Parsley.setLocale('ru');
 export default function validation() {
     const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
 
-    formsToValidate.forEach((form) => {
+    formsToValidate.forEach(form => {
         $(form).parsley();
     });
 }

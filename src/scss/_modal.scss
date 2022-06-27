@@ -129,6 +129,7 @@
         font-size: 1.2rem;
         line-height: 1.2;
         margin-top: 0.5rem;
+        color: rgb(243, 45, 38);
     }
 }
 
@@ -144,6 +145,13 @@
         bottom: 0;
         height: 1px;
         background-color: #cfd0e1;
+        transition: background-color 0.2s;
+    }
+
+    .parsley-error & {
+        &::before {
+            background-color: rgb(243, 45, 38);
+        }
     }
 
     &::after {
@@ -372,7 +380,14 @@ textarea.modal__form-input {
         border: 1px solid #0c131a;
         z-index: -1;
 
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% + 1px),
+            0 calc(100% + 1px)
+        );
     }
 
     &::after {
