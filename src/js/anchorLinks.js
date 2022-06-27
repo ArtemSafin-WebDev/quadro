@@ -4,9 +4,9 @@ import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
 export default function anchorLinks() {
-    // const pageHeader = document.querySelector('.page-header');
-    // const offset = pageHeader ? pageHeader.offsetHeight : 80;
-    const offset = 30;
+    const pageHeader = document.querySelector('.page-header');
+    const offset = pageHeader ? pageHeader.offsetHeight : 80;
+    // const offset = 30;
     const DURATION = 1.4;
     const scrollByHash = hash => {
         const elementToScroll = document.querySelector(hash);
