@@ -57,8 +57,9 @@ export default function fileUpload() {
         if (form) {
             form.addEventListener('reset', () => {
                 input.value = '';
-                label.innerHTML = originalLabelText;
                 element.parentElement.classList.remove('file-loaded');
+                label.textContent = labelOriginalText;
+                size.textContent = sizeOriginalText;
                 element.classList.remove('dragged');
             });
         }
