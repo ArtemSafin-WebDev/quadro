@@ -36,17 +36,13 @@ export default function fixedFooter() {
         // ScrollTrigger.refresh();
     };
 
-   
-
-    if (!IS_MOBILE) {
-        setFixedFooter();
-        window.addEventListener(
-            'resize',
-            debounce(() => {
-                if (previousWidth === document.documentElement.clientWidth) return;
-                previousWidth = document.documentElement.clientWidth;
-                setFixedFooter();
-            }, 300)
-        );
-    }
+    setFixedFooter();
+    window.addEventListener(
+        'resize',
+        debounce(() => {
+            if (previousWidth === document.documentElement.clientWidth) return;
+            previousWidth = document.documentElement.clientWidth;
+            setFixedFooter();
+        }, 300)
+    );
 }

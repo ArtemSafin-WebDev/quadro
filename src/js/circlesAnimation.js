@@ -6,7 +6,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function circlesAnimation() {
     ScrollTrigger.matchMedia({
-        
         '(min-width: 641px)': function() {
             const circlesTl = gsap.timeline({
                 scrollTrigger: {
@@ -117,6 +116,17 @@ export default function circlesAnimation() {
             0.2
         );
 
+    ScrollTrigger.create({
+        trigger: '.dealer',
+        start: 'top center',
+        end: 'bottom top',
+        markers: false,
+        onEnter: () => {
+            const dealer = document.querySelector('.dealer');
+            if (dealer) dealer.classList.remove('dealer--dark');
+        }
+    });
+
     const dealerTl = gsap.timeline({
         scrollTrigger: {
             trigger: '.dealer',
@@ -192,6 +202,15 @@ export default function circlesAnimation() {
                 y: () => convertRemToPixels(3)
             },
             0
+        )
+        .from(
+            '.categories__card-title',
+            {
+                autoAlpha: 0,
+                duration: 0.7,
+                y: () => convertRemToPixels(1.5)
+            },
+            0.4
         )
         .from('.categories__partners', {
             autoAlpha: 0,

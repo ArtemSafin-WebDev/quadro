@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
             ScrollTrigger.refresh();
         });
     }
+
+
 });
 
 document.addEventListener('lazyloaded', () => {
@@ -63,3 +65,5 @@ window.addEventListener('load', function () {
     ScrollTrigger.refresh();
     setTimeout(() => document.body.classList.add('animatable'), 300);
 });
+
+

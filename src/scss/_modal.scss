@@ -167,7 +167,8 @@
         transform: scaleX(0);
     }
 
-    &:focus-within {
+    &:focus-within,
+    &:hover {
         &::after {
             transform: scaleX(1);
         }

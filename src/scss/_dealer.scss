@@ -4,6 +4,13 @@
     background-color: #fff;
     color: var(--text-color);
 
+    transition: background-color .5s, color .5s;
+
+    &--dark {
+        background-color: #071120;
+        color: white;
+    }
+
     @include breakpoint(mobile) {
         padding-bottom: 3rem;
     }
@@ -99,13 +106,7 @@
     &:visited {
         color: var(--primary-color);
     }
-    .no-touch &:hover {
-        color: white;
-
-        .dealer__btn-bg {
-            transform: translateX(-50%) scaleX(1) skew(-25deg);
-        }
-    }
+   
 
     &::before {
         content: '';
@@ -116,6 +117,7 @@
         height: 100%;
         border: 1px solid var(--primary-color);
         z-index: -1;
+        transition: border-color .2s;
 
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 2px), 0 calc(100% + 2px));
 
@@ -134,6 +136,35 @@
         position: absolute;
         right: 0;
         bottom: 0;
+        transition: border-color .2s;
+    }
+
+    .dealer--dark & {
+        color: white;
+        &:link,
+        &:visited {
+            color: white;
+        }
+
+        &::before {
+            border-color: white;
+        }
+
+        &::after {
+            border-color: transparent transparent white transparent;
+        }
+    }
+
+    .no-touch &:hover {
+        color: white;
+
+        .dealer__btn-bg {
+            transform: translateX(-50%) scaleX(1) skew(-25deg);
+        }
+
+        &::after {
+            border-color: transparent transparent var(--primary-color) transparent;
+        }
     }
 }
 
@@ -274,6 +305,8 @@
     font-size: 1.5rem;
     line-height: 1.9rem;
     padding: 0.3rem 0.7rem;
+    padding-bottom: 0.4rem;
+    padding-top: 0.25rem;
     color: white;
     background-color: var(--primary-color);
     border-radius: 0.5rem;
@@ -286,6 +319,7 @@
         line-height: 1.2;
         padding: .4rem .8rem;
         margin-bottom: 1.5rem;
+        padding-top: 0.3rem;
     }
 }
 
