@@ -20,6 +20,7 @@ import partners from './partners';
 import fixedFooter from './fixedFooter';
 import circlesAnimation from './circlesAnimation';
 import fixedHeader from './fixedHeader';
+import cookies from './cookies';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fixedFooter();
     circlesAnimation();
     fixedHeader();
+    cookies();
     
     
     const pageContent = document.querySelector('.page-content');

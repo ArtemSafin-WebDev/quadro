@@ -1,0 +1,78 @@
+.cookie {
+    position: fixed;
+    z-index: 100;
+    width: 44.5rem;
+    background: #ffffff;
+    left: 2.2rem;
+    bottom: 2.2rem;
+    color: #0c131a;
+    padding: 1.8rem 2.2rem;
+    padding-bottom: 2rem;
+    padding-right: 6rem;
+
+    @include breakpoint(mobile) {
+        left: var(--content-padding);
+        right: var(--content-padding);
+        bottom: var(--content-padding);
+        width: auto;
+        padding: 1.5rem;
+        padding-right: 5rem;
+    }
+}
+
+.cookie__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.3rem;
+
+    svg {
+        display: block;
+        width: 2.8rem;
+        height: 2.8rem;
+        fill: #0000ff;
+
+        @include breakpoint(mobile) {
+            width: 2.4rem;
+            height: 2.4rem;
+        }
+    }
+}
+
+.cookie__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.02em;
+
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+}
+
+.cookie__ok {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #0000ff;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all .2s;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        text-decoration-color: #0000ff;
+    }
+}
