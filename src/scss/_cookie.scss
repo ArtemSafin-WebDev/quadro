@@ -10,6 +10,16 @@
     padding-bottom: 2rem;
     padding-right: 6rem;
 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility 0s linear .4s;
+
+    &.shown {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .4s, visibility .4s;
+    }
+
     @include breakpoint(mobile) {
         left: var(--content-padding);
         right: var(--content-padding);
