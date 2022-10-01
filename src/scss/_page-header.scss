@@ -6,7 +6,7 @@
     z-index: 50;
     color: white;
     border-bottom: 1px solid #3a4557;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
 
     .fixed-header & {
         background-color: #071120;
@@ -56,10 +56,10 @@
     & > ul {
         display: flex;
         align-items: center;
-        gap: 2.8rem;
+        gap: 2.3rem;
         flex-wrap: wrap;
-        row-gap: 1.4rem;
-
+        row-gap: 1.15rem;
+        margin-left: -2.5rem;
         & > li {
             & > a {
                 font-style: normal;
@@ -96,10 +96,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 46rem;
     flex-shrink: 1;
     margin-left: auto;
-    gap: 2rem;
+    gap: 2.7rem;
 
     @include breakpoint(mobile) {
         width: auto;
@@ -108,7 +107,8 @@
     }
 }
 
-.page-header__phone {
+.page-header__phone,
+.page-header__email {
     @include breakpointMF(small-tablet) {
         font-style: normal;
         font-weight: 700;
@@ -118,6 +118,7 @@
         text-transform: uppercase;
         position: relative;
         display: block;
+        white-space: nowrap;
         &::before {
             content: '';
             position: absolute;
@@ -146,6 +147,16 @@
         }
     }
 }
+
+.page-header__email {
+    text-transform: lowercase;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+
 
 .page-header__callback-link {
     @include breakpointMF(small-tablet) {
@@ -185,7 +196,14 @@
             z-index: -1;
 
             // clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 2px), 0 calc(100% + 2px));
+            clip-path: polygon(
+                0 0,
+                100% 0,
+                100% calc(100% - 2rem),
+                calc(100% - 2rem) calc(100% - 2rem),
+                calc(100% - 2rem) calc(100% + 2px),
+                0 calc(100% + 2px)
+            );
         }
 
         &::after {
@@ -210,6 +228,7 @@
 }
 
 .page-header__phone-icon,
+.page-header__email-icon,
 .page-header__callback-link-icon {
     display: inline-flex;
     flex-direction: column;
@@ -221,7 +240,7 @@
     border: 1px solid #334970;
     border-radius: 0.1rem;
     flex-shrink: 0;
-   
+
     svg {
         width: 1.8rem;
         height: 1.8rem;
@@ -233,7 +252,8 @@
 }
 
 .page-header__callback-link-text,
-.page-header__phone-text {
+.page-header__phone-text,
+.page-header__email-text {
     @include breakpoint(mobile) {
         display: none;
     }
@@ -285,11 +305,9 @@
         & > span {
             &:nth-child(1) {
                 transform: translateY(11px) rotate(45deg);
-                
             }
             &:nth-child(2) {
                 opacity: 0;
-
             }
             &:nth-child(3) {
                 transform: translateY(-11px) rotate(-45deg);
@@ -319,12 +337,12 @@
         padding-bottom: 4rem;
         opacity: 0;
         visibility: hidden;
-        transition: opacity .4s, visibility 0s linear .4s;
+        transition: opacity 0.4s, visibility 0s linear 0.4s;
 
         .mobile-menu-open & {
             opacity: 1;
             visibility: inherit;
-            transition: opacity .4s, visibility .4s;
+            transition: opacity 0.4s, visibility 0.4s;
         }
     }
 }
@@ -343,7 +361,6 @@
         grid-template-columns: minmax(0, 1fr);
         grid-gap: 3rem;
         & > li {
-        
             & > a {
                 font-style: normal;
                 font-weight: 500;
@@ -367,7 +384,6 @@
         margin-bottom: 0;
     }
 }
-
 
 .page-header__menu-callback-btn {
     display: inline-flex;
@@ -412,7 +428,14 @@
         border: 1px solid white;
         z-index: -1;
 
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) calc(100% - 2rem), calc(100% - 2rem) calc(100% + 2px), 0 calc(100% + 2px));
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% - 2rem),
+            calc(100% - 2rem) calc(100% + 2px),
+            0 calc(100% + 2px)
+        );
     }
 
     &::after {
