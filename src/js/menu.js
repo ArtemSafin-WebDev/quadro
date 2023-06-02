@@ -8,8 +8,6 @@ export default function menu() {
 
     if (!burger || !menu) return;
 
-    console.log('Hello menu')
-
     const openMenu = () => {
         if (window.menuOpen) return;
         document.body.classList.add('mobile-menu-open');

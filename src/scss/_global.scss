@@ -10,8 +10,8 @@
     --max-container-width: 152rem;
     --content-padding: 6rem;
     --header-height: 10rem;
-    --primary-color: #0000FF;
-    --text-color: #0C131A;
+    --primary-color: #0000ff;
+    --text-color: #0c131a;
     --loew: 'Loew Next', sans-serif;
 
     @include breakpoint(mobile) {
@@ -25,10 +25,7 @@ html {
     font-size: 10px;
     -webkit-text-size-adjust: 100%;
 
-  
-   
     @include noHighlight();
-
 
     @media screen and (max-width: 1679px) {
         font-size: clamp(4.2px, 0.6vw, 25px);
@@ -36,7 +33,6 @@ html {
     @include breakpoint(mobile) {
         font-size: 10px;
     }
-
 
     @include breakpoint(supersmall-mobile) {
         font-size: 9px;
@@ -51,6 +47,7 @@ body {
     flex-direction: column;
     font-family: var(--loew);
     color: var(--text-color);
+    overscroll-behavior: none;
 }
 
 main {
@@ -195,8 +192,6 @@ th {
     text-align: left;
     vertical-align: top;
 }
-
-
 
 ::selection {
     color: white;

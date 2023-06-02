@@ -5,6 +5,7 @@ import { convertRemToPixels, IS_MOBILE } from './utils';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function circlesAnimation() {
+    if (document.querySelector('.page-header')?.classList.contains('dark')) return;
     ScrollTrigger.matchMedia({
         '(min-width: 641px)': function() {
             const circlesTl = gsap.timeline({
@@ -179,7 +180,7 @@ export default function circlesAnimation() {
 
     cards.forEach(card => {
         const title = card.querySelector('.categories__card-title');
-        const icon = card.querySelector('.categories__card-icon')
+        const icon = card.querySelector('.categories__card-icon');
         const categoriesCardsTl = gsap.timeline({
             scrollTrigger: {
                 trigger: card,
@@ -187,15 +188,21 @@ export default function circlesAnimation() {
             }
         });
 
-        categoriesCardsTl.from(title, {
-            autoAlpha: 0,
-            duration: 0.5,
-            y: () => IS_MOBILE ? convertRemToPixels(1.5) : convertRemToPixels(3),
-            delay: 0
-        }).from(icon, {
-            autoAlpha: 0,
-            duration: 0.5,
-        }, 0)
+        categoriesCardsTl
+            .from(title, {
+                autoAlpha: 0,
+                duration: 0.5,
+                y: () => (IS_MOBILE ? convertRemToPixels(1.5) : convertRemToPixels(3)),
+                delay: 0
+            })
+            .from(
+                icon,
+                {
+                    autoAlpha: 0,
+                    duration: 0.5
+                },
+                0
+            );
     });
 
     const categoriesTl = gsap.timeline({

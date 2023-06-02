@@ -21,10 +21,11 @@ import fixedFooter from './fixedFooter';
 import circlesAnimation from './circlesAnimation';
 import fixedHeader from './fixedHeader';
 import cookies from './cookies';
+import productSlider from './productSlider';
 
 gsap.registerPlugin(ScrollTrigger);
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     detectTouch();
     setScrollbarWidth();
     masks();
@@ -42,8 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
     circlesAnimation();
     fixedHeader();
     cookies();
-    
-    
+    productSlider();
+
     const pageContent = document.querySelector('.page-content');
     if (pageContent) {
         const imgLoaded = imagesLoaded(document.querySelector('.page-content'));
@@ -54,18 +55,14 @@ document.addEventListener('DOMContentLoaded', function () {
             ScrollTrigger.refresh();
         });
     }
-
-
 });
 
 document.addEventListener('lazyloaded', () => {
     ScrollTrigger.refresh();
 });
 
-window.addEventListener('load', function () {
+window.addEventListener('load', function() {
     document.body.classList.add('loaded');
     ScrollTrigger.refresh();
     setTimeout(() => document.body.classList.add('animatable'), 300);
 });
-
-

@@ -12,6 +12,11 @@
         background-color: #071120;
     }
 
+    &.dark {
+        background-color: #071120;
+        border-color: #071120;
+    }
+
     .modal-open & {
         padding-right: var(--sb-width, 0);
     }
@@ -155,8 +160,6 @@
         display: none;
     }
 }
-
-
 
 .page-header__callback-link {
     @include breakpointMF(small-tablet) {
